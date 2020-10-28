@@ -270,4 +270,4 @@ To avoid unexpected charges, it is recommended that you clean up all of your lab
 
     ![The Notifications dialog box has a message stating that the resource group has been deleted.](media/cleanup-delete-resource-group-notification-02.png 'Notifications dialog box')
 
-You should follow all steps provided _after_ attending the Hands-on lab.
+You should follow all steps provided _after_ attending the team challenge.
