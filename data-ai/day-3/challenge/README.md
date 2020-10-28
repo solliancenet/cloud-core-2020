@@ -7,7 +7,7 @@ Trey Research is looking to provide the next generation experience for connected
 
 ## Contents
 
-- [Machine Learning team challenge](#big-data-and-visualization-team-challenge)
+- [Machine Learning team challenge](#machine-learning-team-challenge)
   - [Contents](#contents)
   - [Abstract](#abstract)
   - [Solution architecture](#solution-architecture)

@@ -4,7 +4,7 @@
 
 <!-- TOC -->
 
-- [Machine Learning hands-on lab step-by-step](#machine-learning-hands-on-lab-step-by-step)
+- [Machine Learning team challenge](#machine-learning-team-challenge)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
@@ -19,7 +19,7 @@
   - [Exercise 3: Creating, training and tracking a deep learning text classification model with Azure Databricks, MLflow and Azure Machine Learning](#exercise-3-creating-training-and-tracking-a-deep-learning-text-classification-model-with-azure-databricks-mlflow-and-azure-machine-learning)
     - [Task 1: Create, train and track the classification model using a notebook](#task-1-create-train-and-track-the-classification-model-using-a-notebook)
     - [Task 2: Review model performance metrics and training artifacts in Azure Machine Learning workspace](#task-2-review-model-performance-metrics-and-training-artifacts-in-azure-machine-learning-workspace)
-  - [After the hands-on lab](#after-the-hands-on-lab)
+  - [After the team challenge](#after-the-team-challenge)
     - [Task 1: Clean up lab resources](#task-1-clean-up-lab-resources)
 
 <!-- /TOC -->
@@ -246,7 +246,7 @@ In this exercise, you create a model for classifying component text as compliant
 
    ![On the Run Details page, the Output + Logs tab is selected, and the training_results.png item is selected in a list on the left. The image is displayed showing charts of Training and validation accuracy, and Training and validation loss.](media/mlflow_3.png 'Model Training Artifacts')
 
-## After the hands-on lab
+## After the team challenge
 
 Duration: 5 minutes
 
