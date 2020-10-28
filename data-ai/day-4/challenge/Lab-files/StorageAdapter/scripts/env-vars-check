@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Copyright (c) Microsoft. All rights reserved.
+
+if [[ -z "$PCS_KEYVAULT_NAME" ]]; then
+    echo "Error: the PCS_KEYVAULT_NAME environment variable is not defined."
+    exit 1
+fi
+
+if [[ -z "$PCS_AAD_APPID" ]]; then
+    echo "Error: the PCS_AAD_APPID environment variable is not defined."
+    exit 1
+fi
+
+if [[ -z "$PCS_AAD_APPSECRET" ]]; then
+    echo "Error: the PCS_AAD_APPSECRET environment variable is not defined."
+    exit 1
+fi

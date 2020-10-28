@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": "1.0.0",
+  "Id": "trafficlight-02",
+  "Version": "0.0.1",
+  "Name": "Traffic Light",
+  "Description": "Failing traffic light with voltage too high",
+  "Protocol": "MQTT",
+  "Simulation": {
+    "InitialState": {
+      "online": true,
+      "latitude": 40.696798,
+      "longitude": -73.956592,
+      "timing": 65,
+      "timing_unit": "seconds",
+      "state": 3,
+      "voltage": 68.4,
+      "serial_number": "PYTGN22694"
+    },
+    "Interval": "00:00:10",
+    "Scripts": [
+      {
+        "Type": "javascript",
+        "Path": "trafficlight-02-state.js"
+      }
+    ]
+  },
+  "Properties": {
+    "Type": "Traffic Light",
+    "Location": "Park Ave",
+    "Latitude": 40.696798,
+    "Longitude": -73.956592
+  },
+  "Tags": {
+    "Borough": "Tailwind"
+  },
+  "Telemetry": [
+    {
+      "Interval": "00:00:15",
+      "MessageTemplate": "{\"latitude\":${latitude},\"longitude\":${longitude},\"timing\":${timing},\"timing_unit\":\"${timing_unit}\",\"voltage\":\"${voltage}\",\"serial_number\":\"${serial_number}\"}",
+      "MessageSchema": {
+        "Name": "trafficlight-sensors;v1",
+        "Format": "JSON",
+        "Fields": {
+          "latitude": "double",
+          "longitude": "double",
+          "timing": "double",
+          "timing_unit": "text",
+          "voltage": "double",
+          "serial_number": "text"
+        }
+      }
+    },
+    {
+      "Interval": "00:01:05",
+      "MessageTemplate": "{\"state\":${state}}",
+      "MessageSchema": {
+        "Name": "trafficlight-state;v1",
+        "Format": "JSON",
+        "Fields": {
+          "state": "double"
+        }
+      }
+    }
+  ],
+  "CloudToDeviceMethods": {
+    "Reboot": {
+      "Type": "javascript",
+      "Path": "reboot-method.js"
+    },
+    "FirmwareUpdate": {
+      "Type": "javascript",
+      "Path": "FirmwareUpdate-method.js"
+    },
+
+    /*
+    "IncreaseTiming": {
+      "Type": "javascript",
+      "Path": "IncreaseTiming-method.js"
+    },
+    "DecreaseTiming": {
+      "Type": "javascript",
+      "Path": "DecreaseTiming-method.js"
+    }
+    */
+  }
+}

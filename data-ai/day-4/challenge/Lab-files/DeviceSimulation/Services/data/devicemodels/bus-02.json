@@ -1,0 +1,82 @@
+{
+  "SchemaVersion": "1.0.0",
+  "Id": "bus-02",
+  "Version": "0.0.1",
+  "Name": "Bus",
+  "Description": "Bus with GPS, speed, and fuel-level sensors",
+  "Protocol": "MQTT",
+  "Simulation": {
+    /*
+    "InitialState": {
+      "online": true,
+      "latitude": 40.693935,
+      "longitude": -73.952279,
+      "fuellevel": 53.0,
+      "fuellevel_unit": "Gal",
+      "speed": 42.0,
+      "speed_unit": "mph",
+      "vin": "2K0H7PNZY0RSFQ033"
+
+    },
+    */
+    "Interval": "00:00:05",
+    "Scripts": [
+      {
+        "Type": "javascript",
+        "Path": "bus-02-state.js"
+
+      }
+    ]
+  },
+  /*
+  "Properties": {
+    "Type": "Bus",
+    "Location": "Tailwind",
+    "Latitude": 40.693935,
+    "Longitude": -73.952279
+
+  },
+  */
+  "Telemetry": [
+    {
+      "Interval": "00:00:12",
+      "MessageTemplate": "{\"latitude\":${latitude},\"longitude\":${longitude},\"speed\":${speed},\"speed_unit\":\"${speed_unit}\",\"vin\":\"${vin}\"}",
+      "MessageSchema": {
+        "Name": "bus-sensors;v1",
+        "Format": "JSON",       
+        /*
+        "Fields": {
+          "latitude": "double",
+          "longitude": "double",
+          "speed": "double",
+          "speed_unit": "text",
+          "vin": "text"          
+        } 
+        */
+      }
+    },
+    {
+      "Interval": "00:00:55",
+      /*
+      "MessageTemplate": "{\"fuellevel\":${fuellevel},\"fuellevel_unit\":\"${fuellevel_unit}\"}",
+      */
+      "MessageSchema": {
+        "Name": "bus-sensors;v1",
+        "Format": "JSON",
+        /*
+        "Fields": {
+          "fuellevel": "double",
+          "fuellevel_unit": "text"
+          
+        }
+        */
+    }
+    }
+  ],
+  "CloudToDeviceMethods": {
+    "FirmwareUpdate": {
+      "Type": "javascript",
+      "Path": "FirmwareUpdate-method.js"
+    }
+  }
+}

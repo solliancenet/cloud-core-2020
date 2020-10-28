@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": "1.0.0",
+  "Id": "trafficlight-01",
+  "Version": "0.0.1",
+  "Name": "Traffic Light",
+  "Description": "Traffic light with state and maintenance data",
+  "Protocol": "MQTT",
+  "Simulation": {
+    "InitialState": {
+      "online": true,
+      "latitude": 40.758019,
+      "longitude": -73.981783,
+      "timing": 90,
+      "timing_unit": "seconds",
+      "state": 1,
+      "voltage": 48.2,
+      "serial_number": "CODSL41211"
+    },
+    "Interval": "00:00:10",
+    "Scripts": [
+      {
+        "Type": "javascript",
+        "Path": "trafficlight-01-state.js"
+
+      }
+    ]
+  },
+  "Properties": {
+    "Type": "Traffic Light",
+    "Location": "W 47th St",
+    "Latitude": 40.758019,
+    "Longitude": -73.981783
+  },
+  "Tags": {
+    "Borough": "Contoso"
+  },
+  "Telemetry": [
+    {
+      "Interval": "00:00:10",
+      "MessageTemplate": "{\"latitude\":${latitude},\"longitude\":${longitude},\"timing\":${timing},\"timing_unit\":\"${timing_unit}\",\"voltage\":\"${voltage}\",\"serial_number\":\"${serial_number}\"}",
+      "MessageSchema": {
+        "Name": "trafficlight-sensors;v1",
+        "Format": "JSON",
+        "Fields": {
+          "latitude": "double",
+          "longitude": "double",
+          "timing": "double",
+          "timing_unit": "text",
+          "voltage": "double",
+          "serial_number": "text"
+        }
+      }
+    },
+    {
+      "Interval": "00:01:30",
+      "MessageTemplate": "{\"state\":${state}}",
+      "MessageSchema": {
+        "Name": "trafficlight-state;v1",
+        "Format": "JSON",
+        "Fields": {
+          "state": "double"
+        }
+      }
+    }
+  ],
+  "CloudToDeviceMethods": {
+    "Reboot": {
+      "Type": "javascript",
+      "Path": "reboot-method.js"
+    },
+    "FirmwareUpdate": {
+      "Type": "javascript",
+      "Path": "FirmwareUpdate-method.js"
+    },
+    /*
+    "IncreaseTiming": {
+      "Type": "javascript",
+      "Path": "IncreaseTiming-method.js"
+    },
+    "DecreaseTiming": {
+      "Type": "javascript",
+      "Path": "DecreaseTiming-method.js"
+    }
+    */
+    
+  }
+}
