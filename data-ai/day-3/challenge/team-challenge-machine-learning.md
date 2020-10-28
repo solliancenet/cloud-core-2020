@@ -52,7 +52,7 @@ In this lab, you will use Azure Databricks in combination with Azure Machine Lea
 
 The following diagram summarizes the key components and processing steps in the lab.
 
-![Vehicle battery telemetry is ingested by an IoT Hub or Event Hub. This data is stored in long term storage, Azure Storage. This data is used by Azure Databricks to train the model that is managed and registered via an Azure Machine Learning workspace. AutoML is also another option that can be used to register a machine learning model. These models are then used for stream data processing and batch data processing in Azure Databricks.](images/lab-architecture.png 'Solution Architecture')
+![Vehicle battery telemetry is ingested by an IoT Hub or Event Hub. This data is stored in long term storage, Azure Storage. This data is used by Azure Databricks to train the model that is managed and registered via an Azure Machine Learning workspace. AutoML is also another option that can be used to register a machine learning model. These models are then used for stream data processing and batch data processing in Azure Databricks.](media/lab-architecture.png 'Solution Architecture')
 
 In this lab, models are trained using both Azure Databricks (for deep learning with the PyTorch and Keras frameworks) and Azure Machine Learning compute (for automated machine learning using the user experience in the Azure Machine Learning studio). Models are registered with the Azure Machine Learning Workspace. The data used for model training is read from Azure Storage.
 
