@@ -192,25 +192,29 @@ In this exercise, you will take advantage of the 'Remote Monitoring' Microsoft A
 
 ### Task 2: Stop running device simulation in the Remote Monitoring Solution
 
-1. Navigate to your Remote Monitoring web application by pasting the URL in a browser window.
+Navigate to the Remote Monitoring web application using the URL copied in the previous task. Stop the current device simulation, since you will be creating your own.
 
-2. When the site loads, select the **gear** icon on the upper-right corner.
+*Tasks to complete:*
 
-3. Shift the **Flowing** switch to stop the current device simulation. We will replace the simulated devices with our own.
+- Navigate to the Remote Monitoring web application and stop the current device simulation.
 
-    ![In the Azure IoT Suite Remote Monitoring Accelerator solution, the Settings (gear) icon is selected. Simulation Data is set to Stop flowing.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image18.png 'Azure IoT Remote Monitoring window')
+*Exit criteria:*
 
-4. After stopping the simulation, take a moment to browse through the site. You will notice an interactive map as the centerpiece, provided by the Azure Maps service that was provisioned as part of the solution. This will display each of your IoT devices that have location information.
+- The device simulation is stopped.
 
-    a. To the left of the map is a count of the devices, as well as the number of alarms and warnings that have been triggered based on pre-configured rules. We will add custom rules later on.
+- You have navigated through the site to take note of its features.
 
-    b. Directly to the right of the map is a list of system alarms for the displayed devices.
+    You will notice an interactive map as the centerpiece, provided by the Azure Maps service that was provisioned as part of the solution. This will display each of your IoT devices that have location information.
 
-    c. Beneath the map is a flowing line chart that displays telemetry data for selected devices and data points.
+    - To the left of the map is a count of the devices, as well as the number of alarms and warnings that have been triggered based on pre-configured rules. We will add custom rules later on.
 
-    d. To the right of the chart is a list of system KPIs (key performance indicators) that shows the number of alarms by device type and whether that number is increasing or decreasing.
+    - Directly to the right of the map is a list of system alarms for the displayed devices.
 
-   ![The Remote Monitoring Dashboard is displayed, the key performance indicators chart in the lower-right corner.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image183.png 'Remote Monitoring Dashboard')
+    - Beneath the map is a flowing line chart that displays telemetry data for selected devices and data points.
+
+    - To the right of the chart is a list of system KPIs (key performance indicators) that shows the number of alarms by device type and whether that number is increasing or decreasing.
+
+    ![The Remote Monitoring Dashboard is displayed, the key performance indicators chart in the lower-right corner.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image183.png 'Remote Monitoring Dashboard')
 
 ## Exercise 2: Provision additional Azure services
 
@@ -408,49 +412,31 @@ IoT Edge devices use one or more modules to perform a series of actions locally 
 
 While we are in the storage account, we will need to create two blob containers for use in this lab.
 
-1. The first container we will create is responsible for housing the definition and configuration of the Azure Stream Analytics job that we will have running on an Edge device later in this lab.
+*Tasks to complete:*
 
-   a. From the menu to the left, scroll down to the **Blob service** section and select **Containers**.
+- Create two blob containers, both with the `Container` public access level.
 
-   b. Select **+ Container** at the top of the Containers blade, then provide the following:
+*Exit criteria:*
 
-      - **Name**: asa-container
+- You have a container named `asa-container`, which is responsible for housing the definition and configuration of the Azure Stream Analytics job that we will have running on an Edge device later in this lab.
 
-      - **Public access level**: Container
-
-    ![The blobs menu item is selected in th left menu, the + Container button is displayed and a form with the previously defined fields are displayed.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image95.png 'Create blob storage container')
-
-2. The second container will be responsible for holding the 'cold' telemetry data coming in from an Edge device. This data is a history of all telemetry gathered from an Edge device that is not uploaded to the cloud in real time.
-
-   a. From the menu to the left, scroll down to the **Blob service** section and select **Containers**.
-
-   b. Select **+ Container** at the top of the Containers blade, then provide the following:
-
-      - **Name**: telemetrysink
-
-      - **Public access level**: Container
+- You have a container named `telemetrysink`, which is responsible for holding the 'cold' telemetry data coming in from an Edge device. This data is a history of all telemetry gathered from an Edge device that is not uploaded to the cloud in real time.
 
 ### Task 8: Retrieve Secrets from the Key Vault
 
 Later in this lab, we will be making use of the Azure Key Vault. This vault is created so that secrets do not need to reside in code. A Key Vault resource was generated when we created the IoT Remote Monitoring accelerator.
 
-1. Return to the resource group that was created for this lab. In the list of resources select the Azure Key Vault resource. Record the name of the Key Vault for use later on in this lab.
+*Tasks to complete:*
 
-    ![In the list of resources, the key vault resource is selected.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image243.png 'Key Vault Resource')
+- Return to the resource group that was created for this lab. In the list of resources select the Azure Key Vault resource. Record the name of the Key Vault for use later on in this lab.
 
-2. From the left-hand menu, select the **Secrets** item, then from the list, select the **aadAppId** item.
+- Copy the current version of the `aadAppId` secret.
 
-    ![The secrets menu item is selected and the secret with the name aaAppId is selected.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image244.png 'The aadAppId secret key')
+- Copy the current version of the `aadAppSecret` secret.
 
-3. Select the Current Version for this key.
+*Exit criteria:*
 
-   ![A version list is displayed showing a single guid value, this guid value is selected.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image245.png 'Select the current key version')
-
-4. At the bottom of the next screen, copy and store the secret value. We will be using this value later on in the lab.
-
-    ![A textbox is displayed beneath the Show Secret Value button, a copy button to the right of this textbox is selected.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image246.png 'Copy the secret value for aadAppId')
-
-5. Repeat steps 2-4 for the following key: **aadAppSecret**.
+- You have saved both secrets to Notepad or similar text editor, to be used later in the team challenge.
 
 ## Exercise 3: Create bus and traffic light simulated devices, and add alerts and filters
 
@@ -1755,33 +1741,13 @@ As you remember, you created an Azure Service Bus Queue to hold messages flagged
 
 A Function app is a logical collection of functions on the Azure platform. Each Function app may have multiple functions contained within. Create a new Function App
 
-1. Using a new tab or instance of your browser navigate to the Azure Management portal, <http://portal.azure.com>.
+*Tasks to complete:*
 
-2. Select **Create a new resource**, then type **function app** into the search box on top. Select **Function App** from the results.
+- Navigate to the Azure portal and create a new Function App and add it to your resource group.
 
-    ![The Search field in the New blade is set to Function App.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image127.png 'Azure Portal New blade')
+*Exit criteria:*
 
-3. Select the **Create** button on the Function App overview blade.
-
-4. On the Create Function App screen, in the **Basics** tab, specify the following configuration options:
-
-    a. **Subscription**: select a valid subscription.
-
-    b. Specify your **Resource Group**, ensuring it's the same one in which your new components have been created.
-
-    c. **Name**: Unique value for the app name (ensure the green check mark appears).
-
-    d. **Runtime Stack**: select **Node.js**.
-
-    e. **Version**: select **12**.
-
-    f. **Publish**: select **Code**.
-
-    g. **Region**: select the region nearest you.
-
-    ![The Create Function app form is displayed with fields populated with the previously defined settings.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image128.png 'Create Function App blade')
-
-5. Press **Review and create**, then **Create** once the summary screen is displayed.
+- You have created a **Node.js** (version 12 or higher) Function App with the code publish option (**not** a Docker container).
 
 ### Task 2: Add new Function to process messages received by the IoT Hub
 
