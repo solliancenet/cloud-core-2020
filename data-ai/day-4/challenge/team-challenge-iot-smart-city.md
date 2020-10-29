@@ -446,6 +446,8 @@ The IoT Remote Monitoring solution allows you to provision and collect telemetry
 
 In this exercise, you will define metadata for new device types that will be provisioned, and whose telemetry will be simulated by the solution. Each new device type will have a state script to generate telemetry that changes the device's state, such as speed, location, voltage, or other data that relates to the device. In addition, you will define cloud-to-device messages and actions for the new device types. Then, you will create and run a new simulation locally, using a Visual Studio solution. Finally, you will create new alerts and filters through the Remote Monitoring web app interface.
 
+> If you are using a hosted lab environment, the files can be found here: `C:\MCW-IoT-and-the-Smart-City-master\Hands-on lab\Lab-files`.
+
 We have created the following files for you, located within the device-simulation project (Lab-files/DeviceSimulation/Services/data/devicemodels):
 
 - Device models:
@@ -489,7 +491,7 @@ You will need to finish configuring these files for the simulator.
 
 In this task, you will open the device-simulation solution in Visual Studio 2019 and configure the projects to run locally.
 
-1. Browse to the device-simulation solution in the following location: Lab-files\\DeviceSimulation.
+1. Browse to the device-simulation solution in the following location: **Lab-files\\DeviceSimulation** (ex. `C:\MCW-IoT-and-the-Smart-City-master\Hands-on lab\Lab-files\DeviceSimulation`).
 
 2. Open **device-simulation.sln**.
 
@@ -1186,7 +1188,7 @@ Additionally, all telemetry obtained from the bus sensors is saved in local blob
 
     ![File/Open Folder is selected in the Visual Studio Code window.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image86.png 'Visual Studio Code window')
 
-3. Browse to the lab-files in the Hands-on lab folder. Select the **VehicleTelemetrySimulator** folder.
+3. Browse to the lab-files (ex. `C:\MCW-IoT-and-the-Smart-City-master\Hands-on lab\Lab-files`) in the Hands-on lab folder. Select the **VehicleTelemetrySimulator** folder.
 
 4. You may see one or more errors about unresolved dependencies or needing to add build and debug assets. Dismiss these messages, as they are not pertinent to the IoT Edge module project.
 
@@ -1535,7 +1537,7 @@ In this task, you will create a Stream Analytics job that filters vehicle teleme
 
     ![The edit query form is displayed, beneath the query textbox, the Upload sample input button is selected.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image103.png 'Upload sample input')
 
-22. Use the browse button to select the **sample-vehicle-telemetry.json** file extracted to the Lab-files folder from the starter solution zip file you downloaded. This file contains 1000 JSON records of simulated vehicle telemetry.
+22. Use the browse button to select the **sample-vehicle-telemetry.json** file extracted to the Lab-files folder (ex. `C:\MCW-IoT-and-the-Smart-City-master\Hands-on lab\Lab-files`) from the starter solution zip file you downloaded. This file contains 1000 JSON records of simulated vehicle telemetry.
 
     ![In the Upload input data blade, the browse button is highlighted and the sample-vehicle-telemetry.json file is displayed in the textbox.](images/Hands-onlabstep-by-step-IoTandtheSmartCityimages/media/image104.png 'Select sample input file')
 
@@ -1852,7 +1854,7 @@ As you remember, you created an Azure Service Bus Queue to ingest messages flagg
 
 ### Task 2: Configure and execute the ReadEngineAlerts solution in Visual Studio 2019
 
-1. Browse to the Lab-files folder containing the extracted solution files for the lab.
+1. Browse to the Lab-files folder containing the extracted solution files for the lab (ex. `C:\MCW-IoT-and-the-Smart-City-master\Hands-on lab\Lab-files`).
 
 2. Open **ReadEngineAlerts\\ReadEngineAlerts.sln** with Visual Studio 2019.
 
