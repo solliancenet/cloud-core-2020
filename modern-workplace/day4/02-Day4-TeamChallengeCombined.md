@@ -1,0 +1,1 @@
+Day for is combined with Power Platform/BizApps. For the day 4 challenge please see the [the team challenge there](https://github.com/solliancenet/cloud-core-2020/blob/main/bizapps/day-4/02%20-%20Team%20Challenge%20-%20Day%204%20-%20Modern%20Workplace%20Apps%20.docx)
